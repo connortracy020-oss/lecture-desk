@@ -42,22 +42,31 @@ if (proof) {
   }
 }
 
-// The demo plays only while it's on screen. With reduced motion it waits for a click.
-const demo = document.querySelector('.demo');
-if (demo) {
-  const video = demo.querySelector('video'), button = demo.querySelector('.play');
-  let chosenPause = false, visible = false;
+// The launch video plays muted while it's on screen. With reduced motion it waits for a click.
+// Turning the sound on starts it from the beginning, since that's when someone means to watch it.
+const film = document.querySelector('[data-film]');
+if (film) {
+  const video = film.querySelector('video'), controls = film.querySelector('.film-controls');
+  const play = film.querySelector('.film-play'), sound = film.querySelector('.film-sound');
+  let chosenPause = false;
   const sync = () => {
-    const paused = video.paused;
-    button.classList.toggle('paused', paused);
-    button.setAttribute('aria-label', paused ? 'Play the demo' : 'Pause the demo');
+    play.classList.toggle('paused', video.paused);
+    play.setAttribute('aria-label', video.paused ? 'Play the video' : 'Pause the video');
+    sound.setAttribute('aria-pressed', String(!video.muted));
+    sound.querySelector('span').textContent = video.muted ? 'Sound on' : 'Sound off';
   };
   const toggle = () => { if (video.paused) { chosenPause = false; video.play().catch(() => {}); } else { chosenPause = true; video.pause(); } };
-  button.hidden = false; button.addEventListener('click', toggle); video.addEventListener('click', toggle);
-  video.addEventListener('play', sync); video.addEventListener('pause', sync); sync();
+  controls.hidden = false;
+  play.addEventListener('click', toggle); video.addEventListener('click', toggle);
+  sound.addEventListener('click', () => {
+    if (video.muted) { video.muted = false; video.currentTime = 0; chosenPause = false; video.play().catch(() => {}); }
+    else video.muted = true;
+    sync();
+  });
+  for (const event of ['play', 'pause', 'volumechange']) video.addEventListener(event, sync);
+  sync();
   new IntersectionObserver(([entry]) => {
-    visible = entry.isIntersecting;
-    if (visible && !chosenPause && !reduced.matches) { video.preload = 'auto'; video.play().catch(() => {}); }
-    else if (!visible) video.pause();
-  }, { threshold: .4 }).observe(video);
+    if (entry.isIntersecting && !chosenPause && !reduced.matches) video.play().catch(() => {});
+    else if (!entry.isIntersecting) video.pause();
+  }, { threshold: .35 }).observe(video);
 }

@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=2724081">
+<link rel="stylesheet" href="styles.css?v=film1">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -51,9 +51,12 @@
       <p class="fine">Windows 10 and 11 &nbsp;·&nbsp; 16 GB of memory &nbsp;·&nbsp; Mac version in development</p>
     </div>
     <div class="wrap wide">
-      <figure class="frame hero-frame">
-        <div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-        <img src="img/hero-notes.webp" width="2160" height="1350" alt="Lecture Desk with a lecture transcript on the left and its study notes, including formulas, on the right" fetchpriority="high">
+      <figure class="film hero-frame" data-film>
+        <video muted playsinline loop preload="metadata" poster="media/launch.jpg" aria-label="A 94-second tour of Lecture Desk: recording a lecture, the study notes it writes, source links, flashcards, asking across classes, and read-aloud"><source src="media/launch.mp4" type="video/mp4"></video>
+        <div class="film-controls" hidden>
+          <button type="button" class="film-sound" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="i-speaker" d="M4 9h4l5-4v14l-5-4H4z"/><path class="i-off" d="M16 9l5 6M21 9l-5 6"/><path class="i-on" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></svg><span>Sound on</span></button>
+          <button type="button" class="film-play" aria-label="Pause the video"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="i-pause" d="M8 5h3v14H8zM13 5h3v14h-3z"/><path class="i-play" d="M8 5.5v13l11-6.5z"/></svg></button>
+        </div>
       </figure>
     </div>
   </section>
@@ -86,11 +89,6 @@
       </div>
       <p class="caption fade">From the sample engineering lecture in the app. Tap a note to see where it came from.</p>
 
-      <figure class="frame demo fade">
-        <video muted playsinline loop preload="none" poster="media/demo.jpg" aria-label="Recording a lecture, watching the transcript fill in, the study notes being written, and opening a note's source"><source src="media/demo.mp4" type="video/mp4"></video>
-        <button class="play" type="button" aria-label="Pause the demo" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path class="i-pause" d="M8 5h3v14H8zM13 5h3v14h-3z"/><path class="i-play" d="M8 5.5v13l11-6.5z"/></svg></button>
-      </figure>
-      <p class="caption fade">Record, transcript, notes, source: one lecture, sped up to 22 seconds.</p>
     </div>
   </section>
 
@@ -194,6 +192,6 @@
   </div>
 </footer>
 
-<script src="site.js?v=2724081" defer></script>
+<script src="site.js?v=film1" defer></script>
 </body>
 </html>

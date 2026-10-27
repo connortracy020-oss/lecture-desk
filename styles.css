@@ -119,14 +119,23 @@ time { font: 500 13px/1.6 var(--mono); color: var(--accent); font-variant-numeri
 .proof-transcript li.lit time { color: var(--accent); }
 @media (max-width: 860px) { .proof { grid-template-columns: 1fr; } .proof-transcript { border-left: 0; border-top: 1px solid var(--rule); } .proof > div { padding: 24px 18px; } }
 
-.demo { position: relative; margin: 96px 0 0 auto; width: min(100%, 860px); }
-.demo + .caption { width: min(100%, 860px); margin-left: auto; }
-.demo video { width: 100%; aspect-ratio: 16 / 9; cursor: pointer; }
-.play { position: absolute; right: 14px; bottom: 14px; width: 38px; height: 38px; display: grid; place-items: center; border-radius: 50%; border: 1px solid rgb(255 255 255 / .2); background: rgb(28 26 23 / .72); cursor: pointer; }
-.play svg { width: 16px; height: 16px; fill: #F4EFE6; }
-.play .i-play { display: none; }
-.play.paused .i-play { display: block; }
-.play.paused .i-pause { display: none; }
+/* The launch video: a plain rounded frame (the film has its own backgrounds) with two quiet controls. */
+.film { position: relative; margin: 0; border-radius: 14px; overflow: hidden; background: #EFEAE1; border: 1px solid var(--rule); box-shadow: 0 1px 1px rgb(28 26 23 / .06), 0 28px 56px -32px rgb(28 26 23 / .45); }
+.film video { width: 100%; aspect-ratio: 16 / 9; cursor: pointer; }
+.film-controls { position: absolute; right: 14px; bottom: 14px; display: flex; gap: 8px; }
+.film-controls button { display: inline-flex; align-items: center; gap: 8px; height: 38px; padding: 0 13px; border-radius: 999px; border: 1px solid rgb(255 255 255 / .16); background: rgb(28 26 23 / .78); color: #F4EFE6; font: 500 13.5px/1 var(--sans); cursor: pointer; transition: background-color .2s; }
+.film-controls button:hover { background: rgb(28 26 23 / .92); }
+.film-controls button:active { transform: translateY(1px); }
+.film-controls svg { width: 16px; height: 16px; fill: #F4EFE6; stroke: #F4EFE6; stroke-width: 0; }
+.film-sound svg .i-off, .film-sound svg .i-on { fill: none; stroke-width: 1.8; stroke-linecap: round; }
+.film-sound .i-on { display: none; }
+.film-sound[aria-pressed="true"] .i-on { display: block; }
+.film-sound[aria-pressed="true"] .i-off { display: none; }
+.film-play { width: 38px; justify-content: center; padding: 0 !important; }
+.film-play .i-play { display: none; }
+.film-play.paused .i-play { display: block; }
+.film-play.paused .i-pause { display: none; }
+@media (max-width: 640px) { .film { border-radius: 10px; } .film-controls { right: 8px; bottom: 8px; } .film-controls button { height: 32px; } .film-sound span { display: none; } }
 
 /* Features: a plain two-column list, ruled like a notebook. */
 .features h2 { margin-bottom: 48px; }
