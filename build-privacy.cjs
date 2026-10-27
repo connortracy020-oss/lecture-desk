@@ -29,18 +29,17 @@ const html = `<!doctype html>
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body class="doc">
-<header class="nav scrolled"><div class="wrap nav-inner"><a class="brand" href="index.html"><picture><source srcset="img/icon-light-512.png" media="(prefers-color-scheme: dark)"><img src="img/icon-512.png" alt="" width="30" height="30"></picture><span>Lecture Desk</span></a><a class="btn btn-small btn-ink" href="index.html#download">Download</a></div></header>
+<header class="nav scrolled"><div class="wrap nav-inner"><a class="brand" href="index.html"><picture><source srcset="img/icon-light-512.png" media="(prefers-color-scheme: dark)"><img src="img/icon-512.png" alt="" width="30" height="30"></picture>Lecture Desk</a><a class="btn btn-sm btn-ink" href="index.html#download">Download</a></div></header>
 <main class="wrap prose">
-<p class="kicker">Privacy</p>
 <h1>${inline(title)}</h1>
 ${updated ? `<p class="updated">${inline(updated)}</p>` : ''}
 ${out.join('\n')}
 </main>
-<footer class="footer"><div class="wrap footer-inner"><a class="brand" href="index.html"><picture><source srcset="img/icon-light-512.png" media="(prefers-color-scheme: dark)"><img src="img/icon-512.png" alt="" width="24" height="24"></picture><span>Lecture Desk</span></a><nav aria-label="Footer"><a href="index.html">Home</a><a href="index.html#download">Download</a></nav></div></footer>
+<footer class="footer"><div class="wrap footer-inner"><a class="brand" href="index.html"><picture><source srcset="img/icon-light-512.png" media="(prefers-color-scheme: dark)"><img src="img/icon-512.png" alt="" width="24" height="24"></picture>Lecture Desk</a><nav aria-label="Footer"><a href="index.html">Home</a><a href="index.html#download">Download</a></nav></div></footer>
 </body>
 </html>
 `;

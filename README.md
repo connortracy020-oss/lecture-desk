@@ -4,5 +4,5 @@ The download page for [Lecture Desk](https://connortracy020-oss.github.io/lectur
 
 - `index.html`, `styles.css`, `site.js`: the page. Plain HTML, CSS and JavaScript with no build step.
 - `privacy.html`: generated from the privacy notice shipped in the app (`node build-privacy.cjs <PRIVACY.md>`).
-- `media/`: feature clips from the launch video. `img/`: screenshots and icons.
+- `media/`: the 22-second demo loop, cut from the launch video. `img/`: screenshot and icons.
 - The Windows installer is attached to each [release](https://github.com/connortracy020-oss/lecture-desk/releases). To publish a new version, attach the new installer to a release, then update `DIRECT` at the top of `site.js`.

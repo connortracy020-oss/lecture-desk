@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Lecture Desk — your lectures, studied on your own laptop</title>
-<meta name="description" content="Lecture Desk records your classes, turns them into study notes with sources, answers your questions, makes flashcards and reads your readings aloud, with AI that runs on your own laptop. Free for Windows.">
-<meta name="theme-color" content="#F5F2EB" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#171613" media="(prefers-color-scheme: dark)">
+<meta name="description" content="Lecture Desk records class on your Windows laptop, turns it into study notes, and links every point back to the moment of the lecture it came from. Free.">
+<meta name="theme-color" content="#F4EFE6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1A1816" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Lecture Desk">
 <meta property="og:description" content="Your lectures, studied on your own laptop. Free for Windows.">
@@ -18,214 +18,181 @@
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
-<header class="nav" id="top">
+<header class="nav">
   <div class="wrap nav-inner">
-    <a class="brand" href="#top" aria-label="Lecture Desk home"><picture><source srcset="img/icon-light-512.png" media="(prefers-color-scheme: dark)"><img src="img/icon-512.png" alt="" width="30" height="30"></picture><span>Lecture Desk</span></a>
+    <a class="brand" href="#top" aria-label="Lecture Desk, back to top"><picture><source srcset="img/icon-light-512.png" media="(prefers-color-scheme: dark)"><img src="img/icon-512.png" alt="" width="28" height="28"></picture>Lecture Desk</a>
     <nav class="nav-links" aria-label="Sections">
-      <a href="#tour">Features</a>
-      <a href="#private">Privacy</a>
-      <a href="#faq">FAQ</a>
+      <a href="#notes">How notes work</a>
+      <a href="#features">Features</a>
+      <a href="#faq">Questions</a>
     </nav>
-    <a class="btn btn-small btn-ink" href="#download">Download</a>
+    <a class="btn btn-ink btn-sm" href="#download">Download</a>
   </div>
 </header>
 
 <main id="main">
-  <section class="hero">
-    <div class="hero-glow" aria-hidden="true"></div>
+  <section class="hero" id="top">
     <div class="wrap hero-copy">
-      <p class="eyebrow reveal"><span class="dot" aria-hidden="true"></span>Free for students · Windows</p>
-      <h1 class="reveal">Your lectures,<br>studied on <span class="accent">your own laptop.</span></h1>
-      <p class="lede reveal">Lecture Desk records class, turns it into study notes that point back to the moment they came from, answers your questions, makes flashcards and reads your readings aloud. The AI runs on your computer, so your classes stay yours.</p>
-      <div class="cta-row reveal">
-        <a class="btn btn-ink btn-large" href="https://apps.microsoft.com/detail/9MX0MPG0RQTL" data-store-link>
+      <h1>Your lectures, studied on <em>your own laptop</em>.</h1>
+      <p class="lede">Lecture Desk records class on your Windows laptop, turns it into study notes, and links every point back to the moment of the lecture it came from. It's free.</p>
+      <div class="cta">
+        <a class="btn btn-ink" href="https://apps.microsoft.com/detail/9MX0MPG0RQTL">
           <svg class="ms" viewBox="0 0 20 20" aria-hidden="true"><rect x="1" y="1" width="8.5" height="8.5" fill="#F25022"/><rect x="10.5" y="1" width="8.5" height="8.5" fill="#7FBA00"/><rect x="1" y="10.5" width="8.5" height="8.5" fill="#00A4EF"/><rect x="10.5" y="10.5" width="8.5" height="8.5" fill="#FFB900"/></svg>
-          Get it free from Microsoft Store
+          Get it from Microsoft Store
         </a>
-        <a class="btn btn-ghost btn-large" href="#download" data-direct-only hidden>Download for Windows</a>
-        <button class="btn btn-link" type="button" data-open-tour><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Watch the 30-second tour</button>
+        <a class="quiet-link" href="#download">or download the installer</a>
       </div>
-      <p class="fine reveal">Windows 10 and 11 (64-bit) · 16 GB memory · Mac version in development</p>
+      <p class="fine">Windows 10 and 11 &nbsp;·&nbsp; 16 GB of memory &nbsp;·&nbsp; Mac version in development</p>
     </div>
-    <div class="wrap">
-      <figure class="window hero-shot reveal">
-        <div class="window-bar" aria-hidden="true"><span></span><span></span><span></span><em>Lecture Desk</em></div>
-        <img src="img/hero-notes.webp" width="2160" height="1350" alt="Lecture Desk showing a lecture transcript next to study notes with formulas">
+    <div class="wrap wide">
+      <figure class="frame hero-frame">
+        <div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+        <img src="img/hero-notes.webp" width="2160" height="1350" alt="Lecture Desk with a lecture transcript on the left and its study notes, including formulas, on the right" fetchpriority="high">
       </figure>
     </div>
   </section>
 
-  <section class="proof wrap" aria-label="At a glance">
-    <div><strong>0</strong><span>accounts, ads or tracking</span></div>
-    <div><strong>100%</strong><span>works offline after setup</span></div>
-    <div><strong>1 click</strong><span>from a lecture to study notes</span></div>
-    <div><strong>Free</strong><span>no subscription</span></div>
+  <section class="notes" id="notes" aria-labelledby="notes-title">
+    <div class="wrap">
+      <div class="notes-head fade">
+        <h2 id="notes-title">Every note can show its work.</h2>
+        <p>A summary only helps if you can trust it. Each point in your notes is tied to the part of the lecture it came from, so when something looks off, you click it and hear the professor say it.</p>
+      </div>
+
+      <div class="proof fade" data-proof>
+        <div class="proof-notes">
+          <p class="pane-title">Study notes</p>
+          <ul>
+            <li><button type="button" aria-pressed="true" data-line="l1"><span>A <b>free-body diagram</b> isolates one body and shows only the external forces on it.</span><time>1:47</time></button></li>
+            <li><button type="button" aria-pressed="false" data-line="l2"><span><b>Cut the body free</b> from its supports and replace each support with its reaction forces.</span><time>3:22</time></button></li>
+            <li><button type="button" aria-pressed="false" data-line="l3"><span>A <b>pin</b> resists motion in two directions; a <b>roller</b> resists one.</span><time>4:57</time></button></li>
+          </ul>
+        </div>
+        <div class="proof-transcript" aria-live="polite">
+          <p class="pane-title">Transcript</p>
+          <ol>
+            <li id="l0"><time>0:12</time><span>Okay, let's get started. Today we are going to draw free-body diagrams for every problem, no exceptions.</span></li>
+            <li id="l1" class="lit"><time>1:47</time><span>A free-body diagram isolates one body and shows every external force acting on it, nothing else.</span></li>
+            <li id="l2"><time>3:22</time><span>So if I have this beam resting on two supports, I cut it free from the supports and replace them with reaction forces.</span></li>
+            <li id="l3"><time>4:57</time><span>The pin at A gives me two unknowns, a horizontal and a vertical reaction. The roller at B gives one.</span></li>
+          </ol>
+        </div>
+      </div>
+      <p class="caption fade">From the sample engineering lecture in the app. Tap a note to see where it came from.</p>
+
+      <figure class="frame demo fade">
+        <video muted playsinline loop preload="none" poster="media/demo.jpg" aria-label="Recording a lecture, watching the transcript fill in, the study notes being written, and opening a note's source"><source src="media/demo.mp4" type="video/mp4"></video>
+        <button class="play" type="button" aria-label="Pause the demo" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path class="i-pause" d="M8 5h3v14H8zM13 5h3v14h-3z"/><path class="i-play" d="M8 5.5v13l11-6.5z"/></svg></button>
+      </figure>
+      <p class="caption fade">Record, transcript, notes, source: one lecture, sped up to 22 seconds.</p>
+    </div>
   </section>
 
-  <section class="tour" id="tour">
+  <section class="features" id="features" aria-labelledby="features-title">
     <div class="wrap">
-      <header class="section-head reveal">
-        <p class="kicker">Everything for class</p>
-        <h2>Record it once.<br>Study it every way.</h2>
-      </header>
-      <div class="showcase reveal">
-        <div class="tabs" role="tablist" aria-label="Lecture Desk features">
-          <button role="tab" aria-selected="true" aria-controls="clip" data-clip="x1-record" data-copy="Record your microphone, the computer's audio, or both. A live transcript follows along while you take notes."><span class="n">01</span>Record</button>
-          <button role="tab" aria-selected="false" aria-controls="clip" data-clip="x2-notes-export" data-copy="Study notes, key points and practice questions, each linked to the exact moment in the lecture. Export them as a PDF."><span class="n">02</span>Study notes</button>
-          <button role="tab" aria-selected="false" aria-controls="clip" data-clip="x3-ask-chat" data-copy="Ask about one lecture, one class or all of them. Answers come only from your own materials, with links to the passages."><span class="n">03</span>Ask</button>
-          <button role="tab" aria-selected="false" aria-controls="clip" data-clip="x4-read-aloud" data-copy="Natural voices read your PDFs and textbooks aloud, highlighting each sentence and remembering where you stopped."><span class="n">04</span>Listen</button>
-          <button role="tab" aria-selected="false" aria-controls="clip" data-clip="x5-study-tools" data-copy="Flashcards made from your notes, reviewed on a schedule: the ones you miss come back sooner."><span class="n">05</span>Flashcards</button>
-        </div>
-        <div class="stage window" id="clip" role="tabpanel">
-          <video muted playsinline preload="metadata" poster="media/x1-record.jpg" aria-label="Lecture Desk recording a lecture"><source src="media/x1-record.mp4" type="video/mp4"></video>
-          <div class="progress" aria-hidden="true"><span></span></div>
-        </div>
-        <p class="stage-copy" aria-live="polite">Record your microphone, the computer's audio, or both. A live transcript follows along while you take notes.</p>
+      <h2 id="features-title" class="fade">What else it does</h2>
+      <dl class="feature-list fade">
+        <div><dt>Recording</dt><dd>Your microphone, the computer's audio for online classes, or both, with a live transcript while class is going.</dd></div>
+        <div><dt>Ask your classes</dt><dd>Ask about one lecture, one class or all of them. Answers come from your recordings and readings, with links to the passages.</dd></div>
+        <div><dt>Flashcards</dt><dd>Made from your study notes, each card linked to where it came from. The ones you miss come back sooner.</dd></div>
+        <div><dt>Read aloud</dt><dd>PDFs and textbooks in a natural voice, highlighting each sentence and remembering where you stopped.</dd></div>
+        <div><dt>Your schedule</dt><dd>From a screenshot or a PDF. Each class keeps its own lectures, slides and readings.</dd></div>
+        <div><dt>Export</dt><dd>Notes, practice questions and the timed transcript as a PDF or a web page.</dd></div>
+        <div><dt>Offline</dt><dd>After a one-time setup, transcription, notes, search and read-aloud all work offline.</dd></div>
+        <div><dt>Graphics acceleration</dt><dd>Laptops with an NVIDIA graphics card can add optional acceleration for much faster notes and transcription.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="privacy" id="privacy" aria-labelledby="privacy-title">
+    <div class="wrap privacy-inner fade">
+      <h2 id="privacy-title">Your classes stay on your&nbsp;laptop.</h2>
+      <div class="privacy-cols">
+        <p>Recording, transcription, notes, search and answers all run on your own computer. There's no account to make, no ads, and nothing reports back to me.</p>
+        <p>The only way your class content leaves your laptop is if you turn on one of the optional cloud features with your own API key, from a provider you pick. Cloud transcription asks before every upload.</p>
+      </div>
+      <a class="text-link" href="privacy.html">Read the full privacy notice</a>
+    </div>
+  </section>
+
+  <section class="why" aria-labelledby="why-title">
+    <div class="wrap why-inner fade">
+      <svg class="folio" viewBox="0 0 32 32" aria-hidden="true">
+        <path class="f-page" d="M7 4.5h13.5l5 5V25a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7.5a3 3 0 0 1 3-3z"/>
+        <path class="f-shade" d="M4.6 23.2V25a2.4 2.4 0 0 0 2.4 2.4h15.5a2.4 2.4 0 0 0 2.4-2.4v-1.8z"/>
+        <path class="f-fold" d="M20.5 4.5v3.5a1.5 1.5 0 0 0 1.5 1.5h3.5"/>
+        <path class="f-ribbon" d="M9 4.5v6l1.5-1.2 1.5 1.2v-6z"/>
+        <ellipse class="f-cheek" cx="10.6" cy="20" rx="1.5" ry=".9"/><ellipse class="f-cheek" cx="21" cy="20" rx="1.5" ry=".9"/>
+        <rect class="f-eye" x="11.1" y="13.7" width="2.9" height="4.6" rx="1.45"/><rect class="f-eye" x="17.6" y="13.7" width="2.9" height="4.6" rx="1.45"/>
+        <path class="f-mouth" d="M14.1 20.3q1.7 1.3 3.4 0"/>
+      </svg>
+      <div class="why-text">
+        <h2 id="why-title">Why I built it</h2>
+        <p>I'm an engineering student at Oregon State, and I kept missing things in lecture. Going back to a recording should have fixed that, but finding the one explanation I needed meant scrubbing through an hour of audio, and it took forever.</p>
+        <p>The AI note tools I found wanted my lectures uploaded to their servers, and I didn't trust that with my classes. So I built Lecture Desk for myself first, to run on my own laptop. It worked well enough that I figured other students could use it too.</p>
+        <p class="sign">Connor</p>
       </div>
     </div>
   </section>
 
-  <section class="bento wrap" aria-label="Why Lecture Desk">
-    <article class="card card-wide card-dark reveal">
-      <div class="card-text">
-        <p class="kicker">Notes you can trust</p>
-        <h3>Every point shows where it came from.</h3>
-        <p>Tap a source to jump to that moment in the recording or that page of the reading. When the AI isn't sure, you can check it in seconds.</p>
-      </div>
-      <img src="img/sources.webp" width="1800" height="1125" alt="Study notes with numbered source links beside the transcript" loading="lazy">
-    </article>
-    <article class="card reveal">
-      <svg class="glyph" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.4-3 8.4-7 10-4-1.6-7-5.6-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
-      <h3>Private by design</h3>
-      <p>No account, no ads, no analytics. Recordings, transcripts and notes stay in a library on your laptop.</p>
-    </article>
-    <article class="card reveal">
-      <svg class="glyph" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 8.5a15 15 0 0 1 20 0"/><path d="M5.5 12a10 10 0 0 1 13 0"/><path d="M9 15.5a5 5 0 0 1 6 0"/><path d="M3 3l18 18"/></svg>
-      <h3>Works with no Wi-Fi</h3>
-      <p>After a one-time setup, transcription, notes, search and read-aloud all run offline, even in a lecture hall with bad Wi-Fi.</p>
-    </article>
-    <article class="card reveal">
-      <svg class="glyph" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>
-      <h3>Organized by class</h3>
-      <p>Import your schedule from a screenshot or PDF. Each class keeps its own lectures, slides and readings, and Today shows what's next.</p>
-    </article>
-    <article class="card reveal">
-      <svg class="glyph" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>
-      <h3>Faster with a graphics card</h3>
-      <p>Laptops with an NVIDIA graphics card can add optional acceleration for much faster notes and transcription.</p>
-    </article>
-    <article class="card reveal">
-      <svg class="glyph" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 19a4.5 4.5 0 0 0 .5-9 6 6 0 0 0-11.7 1.5A4 4 0 0 0 7 19z"/></svg>
-      <h3>Cloud AI, only if you want it</h3>
-      <p>Prefer a bigger model? Bring your own key from Anthropic, OpenAI, Google and others. It's off until you turn it on.</p>
-    </article>
-    <article class="card reveal">
-      <svg class="glyph" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
-      <h3>Export and share</h3>
-      <p>Save a lecture's notes, practice questions and timed transcript as a PDF or web page to print, study from or share.</p>
-    </article>
-  </section>
-
-  <section class="private" id="private">
-    <div class="wrap private-inner">
-      <div class="reveal">
-        <p class="kicker">Your data</p>
-        <h2>Nothing leaves your laptop unless you say so.</h2>
-      </div>
-      <ul class="checks reveal">
-        <li><strong>Local AI.</strong> Speech recognition, notes, search and answers run on your computer.</li>
-        <li><strong>No account.</strong> Open the app and start. There's nothing to sign up for.</li>
-        <li><strong>No tracking.</strong> No advertising, analytics or automatic reports to the developer.</li>
-        <li><strong>You're in control.</strong> Export your notes, back up your library, or delete anything at any time.</li>
-      </ul>
-      <a class="more reveal" href="privacy.html">Read the privacy notice →</a>
-    </div>
-  </section>
-
-  <section class="steps wrap" aria-labelledby="how">
-    <header class="section-head reveal"><p class="kicker">Getting started</p><h2 id="how">Ready before your next class.</h2></header>
-    <ol>
-      <li class="reveal"><span>1</span><h3>Install</h3><p>Get Lecture Desk free from the Microsoft Store, or download the installer below.</p></li>
-      <li class="reveal"><span>2</span><h3>Set up once</h3><p>Lecture Desk checks your laptop and downloads its study tools, about 12 GB, one time.</p></li>
-      <li class="reveal"><span>3</span><h3>Press record</h3><p>Add your classes, record a lecture, and open your study notes when it's done.</p></li>
-    </ol>
-  </section>
-
-  <section class="download" id="download">
+  <section class="download" id="download" aria-labelledby="download-title">
     <div class="wrap">
-      <header class="section-head reveal"><p class="kicker">Download</p><h2>Get Lecture Desk.</h2></header>
-      <div class="dl-grid">
-        <article class="dl-card dl-primary reveal">
-          <div class="dl-os"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5 10.5 4.4v7.1H3zM11.5 4.3 21 3v8.5h-9.5zM3 12.5h7.5v7.1L3 18.5zM11.5 12.5H21V21l-9.5-1.3z"/></svg>Windows</div>
-          <h3>Microsoft Store <span class="badge">Recommended</span></h3>
-          <p>Signed by Microsoft and updated automatically.</p>
-          <a class="btn btn-ink btn-large" href="https://apps.microsoft.com/detail/9MX0MPG0RQTL" data-store-link>Get it free</a>
+      <h2 id="download-title" class="fade">Download</h2>
+      <div class="dl fade">
+        <div class="dl-main">
+          <h3>Windows</h3>
+          <p>The Microsoft Store version is signed by Microsoft and updates itself. It's the easiest way to install.</p>
+          <a class="btn btn-ink" href="https://apps.microsoft.com/detail/9MX0MPG0RQTL">
+            <svg class="ms" viewBox="0 0 20 20" aria-hidden="true"><rect x="1" y="1" width="8.5" height="8.5" fill="#F25022"/><rect x="10.5" y="1" width="8.5" height="8.5" fill="#7FBA00"/><rect x="1" y="10.5" width="8.5" height="8.5" fill="#00A4EF"/><rect x="10.5" y="10.5" width="8.5" height="8.5" fill="#FFB900"/></svg>
+            Get it from Microsoft Store
+          </a>
           <div class="direct" data-direct-only hidden>
             <div class="direct-row">
-              <div><strong>Direct download</strong><span data-direct-meta>Installer for Windows 10 and 11, 64-bit</span></div>
-              <a class="btn btn-ghost" data-direct-link href="#">Download .exe</a>
+              <p><strong>Direct installer</strong><br><span data-direct-meta>Windows 10 and 11, 64-bit</span></p>
+              <a class="btn btn-paper" data-direct-link href="#">Download .exe</a>
             </div>
-            <details class="smartscreen"><summary>Seeing a "Windows protected your PC" message?</summary><p>The direct installer isn't code-signed yet, so Windows SmartScreen may warn you. Choose <strong>More info</strong>, then <strong>Run anyway</strong>. To skip the warning, use the Microsoft Store version, which Microsoft signs. You can compare the file's SHA-256 below with yours by running <code>certutil -hashfile</code> on it.</p><p class="hash" data-direct-hash></p></details>
+            <p class="note">It's the same app, for laptops where the Store isn't available. It isn't code-signed yet, so Windows may say <q>Windows protected your PC</q>: choose <strong>More info</strong>, then <strong>Run anyway</strong>. It doesn't update itself, so check back here for new versions.</p>
+            <details class="hash-box"><summary>Verify the download</summary><p>Run <code>certutil -hashfile Lecture-Desk-0.5.1-Setup.exe SHA256</code> and compare it with:</p><p class="hash" data-direct-hash></p></details>
           </div>
-        </article>
-        <article class="dl-card reveal">
-          <div class="dl-os"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7a4.5 4.5 0 0 0-3.5-1.9c-1.5-.2-2.9.9-3.7.9s-1.9-.9-3.2-.8A4.7 4.7 0 0 0 4.2 9.5c-1.7 2.9-.4 7.3 1.2 9.7.8 1.2 1.8 2.5 3 2.4s1.7-.8 3.2-.8 1.9.8 3.2.8 2.1-1.2 2.9-2.4a10 10 0 0 0 1.3-2.7 4.2 4.2 0 0 1-2.6-3.9zM14 5.5a4.2 4.2 0 0 0 1-3.1 4.4 4.4 0 0 0-2.9 1.5 4.1 4.1 0 0 0-1 3 3.6 3.6 0 0 0 2.9-1.4z"/></svg>Mac</div>
-          <h3>Coming soon</h3>
-          <p>A version for Apple silicon Macs is in development.</p>
-          <span class="btn btn-ghost btn-large is-disabled" aria-disabled="true">In development</span>
-        </article>
+        </div>
       </div>
-      <div class="reqs reveal">
-        <h3>What you need</h3>
-        <dl>
-          <div><dt>System</dt><dd>Windows 10 (version 2004 or later) or Windows 11, 64-bit</dd></div>
-          <div><dt>Memory</dt><dd>16 GB or more. 28 GB unlocks In-depth notes.</dd></div>
-          <div><dt>Storage</dt><dd>About 15 GB free for the app and its study tools</dd></div>
-          <div><dt>Graphics</dt><dd>Not required. An NVIDIA graphics card makes it faster.</dd></div>
-        </dl>
-      </div>
+      <p class="mac fade"><strong>Mac:</strong> a version for Apple silicon Macs is in development. It'll be here when it's ready.</p>
+      <dl class="reqs fade">
+        <div><dt>System</dt><dd>Windows 10 (version 2004 or later) or Windows 11, 64-bit</dd></div>
+        <div><dt>Memory</dt><dd>16 GB or more; 28 GB for In-depth notes</dd></div>
+        <div><dt>Storage</dt><dd>About 15 GB free, including the study tools it downloads once (about 12 GB)</dd></div>
+        <div><dt>Graphics</dt><dd>Not required. An NVIDIA card makes it faster.</dd></div>
+      </dl>
     </div>
   </section>
 
-  <section class="faq wrap" id="faq" aria-labelledby="faq-title">
-    <header class="section-head reveal"><p class="kicker">Questions</p><h2 id="faq-title">Good to know.</h2></header>
-    <div class="faq-list">
-      <details class="reveal"><summary>Is Lecture Desk really free?</summary><p>Yes. There's no subscription, no account and no ads. The only optional costs are cloud AI features, which use your own API key and are billed by that provider if you turn them on.</p></details>
-      <details class="reveal"><summary>Do my recordings get uploaded anywhere?</summary><p>No. Recordings, transcripts, notes and readings stay in a library on your laptop and are processed by AI running on it. If you choose to turn on cloud transcription or cloud notes with your own key, the app asks first and only sends what that feature needs.</p></details>
-      <details class="reveal"><summary>Can I record my classes?</summary><p>That depends on your school and your instructor. Check your class's recording rules and get any permission you need before recording.</p></details>
-      <details class="reveal"><summary>How long do study notes take?</summary><p>It depends on your laptop and the length of the lecture. Lecture Desk shows an estimate before it starts, keeps working in the background, and is much faster with an NVIDIA graphics card.</p></details>
-      <details class="reveal"><summary>Microsoft Store or direct download?</summary><p>The Microsoft Store version is signed by Microsoft and updates itself, so it's the easiest choice. The direct installer is the same app for laptops where the Store isn't available. It doesn't update itself, so download new versions from this page.</p></details>
-      <details class="reveal"><summary>Is there a Mac version?</summary><p>It's in development for Apple silicon Macs. This page will have the download when it's ready.</p></details>
-    </div>
-  </section>
-
-  <section class="final">
-    <div class="wrap final-inner reveal">
-      <picture><source srcset="img/icon-light-512.png" media="(prefers-color-scheme: dark)"><img src="img/icon-512.png" alt="" width="84" height="84"></picture>
-      <h2>Your next lecture is the best one to start with.</h2>
-      <a class="btn btn-accent btn-large" href="#download">Download Lecture Desk</a>
+  <section class="faq" id="faq" aria-labelledby="faq-title">
+    <div class="wrap faq-inner">
+      <h2 id="faq-title" class="fade">Questions</h2>
+      <div class="faq-list fade">
+        <details><summary>Is it really free?</summary><p>Yes, with no subscription. The one thing that can cost money is optional cloud AI, which runs on your own API key, so that provider bills you directly if you turn it on.</p></details>
+        <details><summary>Am I allowed to record my classes?</summary><p>That depends on your school and your instructor. Check your class's recording rules and get any permission you need before you record.</p></details>
+        <details><summary>How long do notes take?</summary><p>It depends on your laptop and how long the lecture is. Lecture Desk shows an estimate before it starts and keeps working in the background. An NVIDIA graphics card makes it much faster.</p></details>
+        <details><summary>Microsoft Store or the direct installer?</summary><p>Use the Store if you can: it's signed and updates itself. The direct installer is the same app for laptops without the Store, and you'll need to download new versions from this page.</p></details>
+        <details><summary>Is there a Mac version?</summary><p>It's in development for Apple silicon Macs. The download will be on this page when it's ready.</p></details>
+      </div>
     </div>
   </section>
 </main>
 
 <footer class="footer">
   <div class="wrap footer-inner">
-    <a class="brand" href="#top"><picture><source srcset="img/icon-light-512.png" media="(prefers-color-scheme: dark)"><img src="img/icon-512.png" alt="" width="24" height="24"></picture><span>Lecture Desk</span></a>
-    <nav aria-label="Footer"><a href="privacy.html">Privacy</a><a href="https://apps.microsoft.com/detail/9MX0MPG0RQTL" data-store-link>Microsoft Store</a><a href="mailto:connor.tracy@gmail.com">Contact</a></nav>
-    <p>Made by Connor Tracy. AI notes can contain mistakes; check them against the lecture.</p>
+    <a class="brand" href="#top"><picture><source srcset="img/icon-light-512.png" media="(prefers-color-scheme: dark)"><img src="img/icon-512.png" alt="" width="22" height="22"></picture>Lecture Desk</a>
+    <nav aria-label="Footer"><a href="privacy.html">Privacy</a><a href="https://apps.microsoft.com/detail/9MX0MPG0RQTL">Microsoft Store</a><a href="https://github.com/connortracy020-oss/lecture-desk/releases">Releases</a><a href="mailto:connor.tracy@gmail.com">Contact</a></nav>
+    <p>Made by Connor Tracy at Oregon State. AI notes can be wrong, so check anything important against the lecture.</p>
   </div>
 </footer>
-
-<dialog class="tour-dialog" aria-label="Lecture Desk tour video">
-  <form method="dialog"><button class="close" aria-label="Close video">×</button></form>
-  <video controls playsinline preload="none" poster="media/tour.jpg"><source src="media/tour.mp4" type="video/mp4"></video>
-</dialog>
 
 <script src="site.js" defer></script>
 </body>
