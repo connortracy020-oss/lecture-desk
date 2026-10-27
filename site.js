@@ -19,6 +19,12 @@ if (DIRECT.url) {
   if (hash) hash.textContent = DIRECT.sha256;
 }
 
+// On a Mac, a link straight to Privacy & Security for the one-time Open Anyway step.
+// iPads also say Macintosh, so touch screens are left out.
+if (/Macintosh/.test(navigator.userAgent) && navigator.maxTouchPoints < 2) {
+  for (const el of document.querySelectorAll('[data-mac-settings]')) el.hidden = false;
+}
+
 // A hairline under the navigation once the page moves.
 const nav = document.querySelector('.nav');
 const onScroll = () => nav.classList.toggle('scrolled', scrollY > 4);

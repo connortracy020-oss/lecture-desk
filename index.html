@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Lecture Desk — your lectures, studied on your own laptop</title>
-<meta name="description" content="Lecture Desk records class on your Windows laptop, turns it into study notes, and links every point back to the moment of the lecture it came from. Free.">
+<meta name="description" content="Lecture Desk records class on your laptop, turns it into study notes, and links every point back to the moment of the lecture it came from. Free for Windows, with a Mac preview.">
 <meta name="theme-color" content="#F4EFE6" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#1A1816" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Lecture Desk">
-<meta property="og:description" content="Your lectures, studied on your own laptop. Free for Windows.">
+<meta property="og:description" content="Your lectures, studied on your own laptop. Free for Windows, with a Mac preview.">
 <meta property="og:url" content="https://connortracy020-oss.github.io/lecture-desk/">
 <meta property="og:image" content="https://connortracy020-oss.github.io/lecture-desk/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=top1">
+<link rel="stylesheet" href="styles.css?v=mac1">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -41,7 +41,7 @@
   <section class="hero" id="top">
     <div class="wrap hero-copy">
       <h1>Your lectures, studied on <em>your own laptop</em>.</h1>
-      <p class="lede">Lecture Desk records class on your Windows laptop, turns it into study notes, and links every point back to the moment of the lecture it came from. It's free.</p>
+      <p class="lede">Lecture Desk records class on your laptop, turns it into study notes, and links every point back to the moment of the lecture it came from. It's free.</p>
     </div>
     <div class="wrap get" id="download" role="region" aria-label="Download">
       <div class="dl">
@@ -61,8 +61,31 @@
             <details class="hash-box"><summary>Verify the download</summary><p>Run <code>certutil -hashfile Lecture-Desk-0.5.1-Setup.exe SHA256</code> and compare it with:</p><p class="hash" data-direct-hash></p></details>
           </div>
         </div>
+        <div class="dl-mac">
+          <div class="mac-intro">
+            <h3>Mac <span class="tag">Preview</span></h3>
+            <p>For Macs with Apple silicon. It runs best with 16&nbsp;GB of memory or more; Macs with 8&nbsp;GB use a smaller notes model. So far it's been tested on a MacBook Air (M3) running macOS&nbsp;26.</p>
+            <a class="btn btn-ink" href="https://github.com/connortracy020-oss/lecture-desk/releases/download/v0.5.1/Lecture-Desk-0.5.1-mac-arm64.dmg" data-mac-link>
+              <svg class="apple" viewBox="0 0 17 20" aria-hidden="true"><path d="M14.1 10.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9C3.6 4.8 2 5.8 1.1 7.4c-1.8 3.2-.5 7.9 1.3 10.5.9 1.3 1.9 2.7 3.3 2.6 1.3-.1 1.8-.8 3.4-.8s2 .8 3.4.8c1.4 0 2.3-1.3 3.2-2.6 1-1.5 1.4-2.9 1.4-3-.1 0-2.9-1.1-3-4.3zM11.5 3c.7-.9 1.2-2 1.1-3.2-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.1 1.1.1 2.3-.6 3-1.5z"/></svg>
+              Download for Mac
+            </a>
+            <p class="meta">Version 0.5.1 · 826 MB · Apple silicon</p>
+          </div>
+          <div class="mac-steps">
+            <p><strong>What happens the first time you open it</strong></p>
+            <p class="note">The Mac version isn't notarized by Apple yet, so macOS stops it the first time. You approve it once:</p>
+            <ol class="steps">
+              <li>Open the downloaded file and drag Lecture Desk into <strong>Applications</strong>.</li>
+              <li>Open it from Applications. macOS says it couldn't verify the app. Click <strong>Done</strong>.</li>
+              <li>Open <strong>System Settings → Privacy &amp; Security</strong>, scroll down and click <strong>Open Anyway</strong>, then enter your Mac's password.<a class="btn btn-paper btn-sm settings-link" href="x-apple.systempreferences:com.apple.preference.security" data-mac-settings hidden>Open Privacy &amp; Security</a></li>
+              <li>If macOS asks one more time, click <strong>Open Anyway</strong>. From then on it opens like any other app.</li>
+            </ol>
+            <p class="note">The Mac version doesn't update itself yet, so check back here for new versions. After you install one, macOS may ask again.</p>
+            <details class="hash-box"><summary>Verify the download</summary><p>In Terminal, run <code>shasum -a 256 Lecture-Desk-0.5.1-mac-arm64.dmg</code> and compare it with:</p><p class="hash">9aad8ac2e04fb31ea334fd00d4ce24e74d5650d1fb0bce65e19ebc7296e15e14</p></details>
+          </div>
+        </div>
       </div>
-      <p class="mac"><strong>Mac:</strong> a version for Apple silicon Macs is in development. It'll be here when it's ready.</p>
+      <p class="reqs-title">Windows requirements</p>
       <dl class="reqs">
         <div><dt>System</dt><dd>Windows 10 (version 2004 or later) or Windows 11, 64-bit</dd></div>
         <div><dt>Memory</dt><dd>16 GB or more; 28 GB for In-depth notes</dd></div>
@@ -130,7 +153,7 @@
         <div><dt>Your schedule</dt><dd>From a screenshot or a PDF. Each class keeps its own lectures, slides and readings.</dd></div>
         <div><dt>Export</dt><dd>Notes, practice questions and the timed transcript as a PDF or a web page.</dd></div>
         <div><dt>Offline</dt><dd>After a one-time setup, transcription, notes, search and read-aloud all work offline.</dd></div>
-        <div><dt>Graphics acceleration</dt><dd>Laptops with an NVIDIA graphics card can add optional acceleration for much faster notes and transcription.</dd></div>
+        <div><dt>Graphics acceleration</dt><dd>Windows laptops with an NVIDIA graphics card can add optional acceleration for much faster notes and transcription. Macs use their built-in graphics automatically.</dd></div>
       </dl>
     </div>
   </section>
@@ -174,7 +197,7 @@
         <details><summary>Am I allowed to record my classes?</summary><p>That depends on your school and your instructor. Check your class's recording rules and get any permission you need before you record.</p></details>
         <details><summary>How long do notes take?</summary><p>It depends on your laptop and how long the lecture is. Lecture Desk shows an estimate before it starts and keeps working in the background. An NVIDIA graphics card makes it much faster.</p></details>
         <details><summary>Microsoft Store or the direct installer?</summary><p>Use the Store if you can: it's signed and updates itself. The direct installer is the same app for laptops without the Store, and you'll need to download new versions from this page.</p></details>
-        <details><summary>Is there a Mac version?</summary><p>It's in development for Apple silicon Macs. The download will be on this page when it's ready.</p></details>
+        <details><summary>Is there a Mac version?</summary><p>Yes, a preview for Macs with Apple silicon. It isn't notarized by Apple yet, so the first time you open it you approve it once in System Settings; the steps are in the download section at the top. It doesn't update itself yet.</p></details>
       </div>
     </div>
   </section>
@@ -188,6 +211,6 @@
   </div>
 </footer>
 
-<script src="site.js?v=top1" defer></script>
+<script src="site.js?v=mac1" defer></script>
 </body>
 </html>

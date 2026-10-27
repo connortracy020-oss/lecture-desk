@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=top1">
+<link rel="stylesheet" href="styles.css?v=mac1">
 </head>
 <body class="doc">
 <header class="nav scrolled"><div class="wrap nav-inner"><a class="brand" href="index.html"><picture><source srcset="img/icon-light-512.png" media="(prefers-color-scheme: dark)"><img src="img/icon-512.png" alt="" width="30" height="30"></picture>Lecture Desk</a><a class="btn btn-sm btn-ink" href="index.html#download">Download</a></div></header>
@@ -42,6 +42,9 @@
 <p>The direct Windows installer preserves the beta data folder on uninstall. Store edition uninstall behavior is subject to Windows package storage handling. For complete removal, first stop recordings and quit the beta, then remove any remaining beta data folder through File Explorer. Delete any exports, backups, or original source files separately if you no longer want them. Do not delete the separate personal <code>Lecture Desk</code> folder.</p>
 <p><strong>Share class setup</strong> exports only a class's code, name, color, and optional weekly meeting details. Review those details before sharing. It excludes recordings, materials, transcripts, notes, and accounts.</p>
 <p><strong>Export diagnostics</strong> writes a local report containing the app/Windows versions, architecture, memory amount, item counts, and setup/recorder status. It does not include lecture content, file paths, API keys, or account details, and is not sent automatically. Review the report before sending it to the publisher.</p>
+<h2>On a Mac (preview)</h2>
+<p>The Mac preview handles your data the same way as the Windows app, with these differences:</p>
+<ul><li>Your library is in <code>~/Library/Application Support/Lecture Desk Classmate Beta</code> instead of <code>%LOCALAPPDATA%</code>.</li><li>API keys for optional cloud AI are encrypted with the macOS Keychain instead of Windows secret protection.</li><li>There is no separate GPU download. Lecture Desk uses the Mac's built-in graphics.</li><li>macOS asks for your permission before Lecture Desk can use the microphone. Recording the computer's audio, such as an online lecture, needs the Screen &amp; System Audio Recording permission. Lecture Desk uses it only to capture audio and never records the screen image.</li><li>To remove the app, quit it and move it from Applications to the Trash. Your library stays in the folder above until you delete that folder.</li></ul>
 <h2>Contact</h2>
 <p>Publisher: Connor Tracy. For support or privacy questions, email <a href="mailto:connor.tracy@gmail.com">connor.tracy@gmail.com</a>. Include only the information needed to explain your request; do not send passwords, API keys, or lecture recordings unless specifically needed and agreed. Support emails are received by the publisher through Gmail.</p>
 </main>

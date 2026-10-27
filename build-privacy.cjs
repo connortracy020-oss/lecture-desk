@@ -1,7 +1,11 @@
 // Builds privacy.html from the privacy notice packaged in the released app, so the hosted
 // notice always matches what ships. Usage: node build-privacy.cjs <path to PRIVACY.md>
+// privacy-mac.md (how the Mac preview differs) goes in just before the contact section.
 const fs = require('fs'), path = require('path');
-const source = fs.readFileSync(process.argv[2] || path.join(__dirname, '..', 'installer', 'win-unpacked', 'resources', 'PRIVACY.md'), 'utf8').replace(/\r\n/g, '\n');
+const mac = fs.readFileSync(path.join(__dirname, 'privacy-mac.md'), 'utf8').replace(/\r\n/g, '\n').trim();
+const source = fs.readFileSync(process.argv[2] || path.join(__dirname, '..', 'installer', 'win-unpacked', 'resources', 'PRIVACY.md'), 'utf8').replace(/\r\n/g, '\n')
+  .replace(/\n## Contact\b/, () => '\n' + mac + '\n\n## Contact');
+if (!source.includes(mac)) throw new Error('No contact section to put the Mac notes before');
 const escape = text => text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const inline = text => escape(text)
   .replace(/`([^`]+)`/g, '<code>$1</code>')
