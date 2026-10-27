@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=film1">
+<link rel="stylesheet" href="styles.css?v=top1">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -28,6 +28,7 @@
   <div class="wrap nav-inner">
     <a class="brand" href="#top" aria-label="Lecture Desk, back to top"><picture><source srcset="img/icon-light-512.png" media="(prefers-color-scheme: dark)"><img src="img/icon-512.png" alt="" width="28" height="28"></picture>Lecture Desk</a>
     <nav class="nav-links" aria-label="Sections">
+      <a href="#tour">Tour</a>
       <a href="#notes">How notes work</a>
       <a href="#features">Features</a>
       <a href="#faq">Questions</a>
@@ -41,17 +42,43 @@
     <div class="wrap hero-copy">
       <h1>Your lectures, studied on <em>your own laptop</em>.</h1>
       <p class="lede">Lecture Desk records class on your Windows laptop, turns it into study notes, and links every point back to the moment of the lecture it came from. It's free.</p>
-      <div class="cta">
-        <a class="btn btn-ink" href="https://apps.microsoft.com/detail/9MX0MPG0RQTL">
-          <svg class="ms" viewBox="0 0 20 20" aria-hidden="true"><rect x="1" y="1" width="8.5" height="8.5" fill="#F25022"/><rect x="10.5" y="1" width="8.5" height="8.5" fill="#7FBA00"/><rect x="1" y="10.5" width="8.5" height="8.5" fill="#00A4EF"/><rect x="10.5" y="10.5" width="8.5" height="8.5" fill="#FFB900"/></svg>
-          Get it from Microsoft Store
-        </a>
-        <a class="quiet-link" href="#download">or download the installer</a>
-      </div>
-      <p class="fine">Windows 10 and 11 &nbsp;·&nbsp; 16 GB of memory &nbsp;·&nbsp; Mac version in development</p>
     </div>
-    <div class="wrap wide">
-      <figure class="film hero-frame" data-film>
+    <div class="wrap get" id="download" role="region" aria-label="Download">
+      <div class="dl">
+        <div class="dl-main">
+          <h3>Windows</h3>
+          <p>The Microsoft Store version is signed by Microsoft and updates itself. It's the easiest way to install.</p>
+          <a class="btn btn-ink" href="https://apps.microsoft.com/detail/9MX0MPG0RQTL">
+            <svg class="ms" viewBox="0 0 20 20" aria-hidden="true"><rect x="1" y="1" width="8.5" height="8.5" fill="#F25022"/><rect x="10.5" y="1" width="8.5" height="8.5" fill="#7FBA00"/><rect x="1" y="10.5" width="8.5" height="8.5" fill="#00A4EF"/><rect x="10.5" y="10.5" width="8.5" height="8.5" fill="#FFB900"/></svg>
+            Get it from Microsoft Store
+          </a>
+          <div class="direct" data-direct-only hidden>
+            <div class="direct-row">
+              <p><strong>Direct installer</strong><br><span data-direct-meta>Windows 10 and 11, 64-bit</span></p>
+              <a class="btn btn-paper" data-direct-link href="#">Download .exe</a>
+            </div>
+            <p class="note">It's the same app, for laptops where the Store isn't available. It isn't code-signed yet, so Windows may say <q>Windows protected your PC</q>: choose <strong>More info</strong>, then <strong>Run anyway</strong>. It doesn't update itself, so check back here for new versions.</p>
+            <details class="hash-box"><summary>Verify the download</summary><p>Run <code>certutil -hashfile Lecture-Desk-0.5.1-Setup.exe SHA256</code> and compare it with:</p><p class="hash" data-direct-hash></p></details>
+          </div>
+        </div>
+      </div>
+      <p class="mac"><strong>Mac:</strong> a version for Apple silicon Macs is in development. It'll be here when it's ready.</p>
+      <dl class="reqs">
+        <div><dt>System</dt><dd>Windows 10 (version 2004 or later) or Windows 11, 64-bit</dd></div>
+        <div><dt>Memory</dt><dd>16 GB or more; 28 GB for In-depth notes</dd></div>
+        <div><dt>Storage</dt><dd>About 15 GB free, including the study tools it downloads once (about 12 GB)</dd></div>
+        <div><dt>Graphics</dt><dd>Not required. An NVIDIA card makes it faster.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="tour" id="tour" aria-labelledby="tour-title">
+    <div class="wrap tour-inner">
+      <div class="tour-head fade">
+        <h2 id="tour-title">The 94-second tour</h2>
+        <p>Recording a lecture, the notes it writes, source links, flashcards, asking across classes, and read-aloud.</p>
+      </div>
+      <figure class="film fade" data-film>
         <video muted playsinline loop preload="metadata" poster="media/launch.jpg" aria-label="A 94-second tour of Lecture Desk: recording a lecture, the study notes it writes, source links, flashcards, asking across classes, and read-aloud"><source src="media/launch.mp4" type="video/mp4"></video>
         <div class="film-controls" hidden>
           <button type="button" class="film-sound" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="i-speaker" d="M4 9h4l5-4v14l-5-4H4z"/><path class="i-off" d="M16 9l5 6M21 9l-5 6"/><path class="i-on" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></svg><span>Sound on</span></button>
@@ -139,37 +166,6 @@
     </div>
   </section>
 
-  <section class="download" id="download" aria-labelledby="download-title">
-    <div class="wrap">
-      <h2 id="download-title" class="fade">Download</h2>
-      <div class="dl fade">
-        <div class="dl-main">
-          <h3>Windows</h3>
-          <p>The Microsoft Store version is signed by Microsoft and updates itself. It's the easiest way to install.</p>
-          <a class="btn btn-ink" href="https://apps.microsoft.com/detail/9MX0MPG0RQTL">
-            <svg class="ms" viewBox="0 0 20 20" aria-hidden="true"><rect x="1" y="1" width="8.5" height="8.5" fill="#F25022"/><rect x="10.5" y="1" width="8.5" height="8.5" fill="#7FBA00"/><rect x="1" y="10.5" width="8.5" height="8.5" fill="#00A4EF"/><rect x="10.5" y="10.5" width="8.5" height="8.5" fill="#FFB900"/></svg>
-            Get it from Microsoft Store
-          </a>
-          <div class="direct" data-direct-only hidden>
-            <div class="direct-row">
-              <p><strong>Direct installer</strong><br><span data-direct-meta>Windows 10 and 11, 64-bit</span></p>
-              <a class="btn btn-paper" data-direct-link href="#">Download .exe</a>
-            </div>
-            <p class="note">It's the same app, for laptops where the Store isn't available. It isn't code-signed yet, so Windows may say <q>Windows protected your PC</q>: choose <strong>More info</strong>, then <strong>Run anyway</strong>. It doesn't update itself, so check back here for new versions.</p>
-            <details class="hash-box"><summary>Verify the download</summary><p>Run <code>certutil -hashfile Lecture-Desk-0.5.1-Setup.exe SHA256</code> and compare it with:</p><p class="hash" data-direct-hash></p></details>
-          </div>
-        </div>
-      </div>
-      <p class="mac fade"><strong>Mac:</strong> a version for Apple silicon Macs is in development. It'll be here when it's ready.</p>
-      <dl class="reqs fade">
-        <div><dt>System</dt><dd>Windows 10 (version 2004 or later) or Windows 11, 64-bit</dd></div>
-        <div><dt>Memory</dt><dd>16 GB or more; 28 GB for In-depth notes</dd></div>
-        <div><dt>Storage</dt><dd>About 15 GB free, including the study tools it downloads once (about 12 GB)</dd></div>
-        <div><dt>Graphics</dt><dd>Not required. An NVIDIA card makes it faster.</dd></div>
-      </dl>
-    </div>
-  </section>
-
   <section class="faq" id="faq" aria-labelledby="faq-title">
     <div class="wrap faq-inner">
       <h2 id="faq-title" class="fade">Questions</h2>
@@ -192,6 +188,6 @@
   </div>
 </footer>
 
-<script src="site.js?v=film1" defer></script>
+<script src="site.js?v=top1" defer></script>
 </body>
 </html>

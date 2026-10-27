@@ -42,7 +42,7 @@ if (proof) {
   }
 }
 
-// The launch video plays muted while it's on screen. With reduced motion it waits for a click.
+// The launch video plays muted once it has been scrolled into view. With reduced motion it waits for a click.
 // Turning the sound on starts it from the beginning, since that's when someone means to watch it.
 const film = document.querySelector('[data-film]');
 if (film) {
@@ -65,8 +65,12 @@ if (film) {
   });
   for (const event of ['play', 'pause', 'volumechange']) video.addEventListener(event, sync);
   sync();
-  new IntersectionObserver(([entry]) => {
-    if (entry.isIntersecting && !chosenPause && !reduced.matches) video.play().catch(() => {});
-    else if (!entry.isIntersecting) video.pause();
-  }, { threshold: .35 }).observe(video);
+  // It waits until the visitor has scrolled to it, even on a screen tall enough to show it on load.
+  let inView = false, scrolled = scrollY > 0;
+  const autoplay = () => {
+    if (inView && scrolled && !chosenPause && !reduced.matches) video.play().catch(() => {});
+    else if (!inView) video.pause();
+  };
+  addEventListener('scroll', () => { if (!scrolled) { scrolled = true; autoplay(); } }, { passive: true });
+  new IntersectionObserver(([entry]) => { inView = entry.isIntersecting; autoplay(); }, { threshold: .6 }).observe(video);
 }
